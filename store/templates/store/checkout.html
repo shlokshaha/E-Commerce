@@ -145,6 +145,10 @@
 			.then((data)=>{
 				console.log('Success:',data)
 				alert('Transaction Completed!')
+
+				cart={}									// after transaction empty the cookie cart
+				document.cookie='cart='+JSON.stringify(cart)+";domain=;path=/"		//reset cookie to empty cart
+
 				window.location.href = "{% url 'store' %}"
 			})
 		}
